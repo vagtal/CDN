@@ -29,10 +29,10 @@ $(document).ready(function() {
               <input type="radio" class="tracker-turn" name="turn" value="${i}">
               <input type="text" class="ctr-name" placeholder="Nombre" value="${pj.name}"/>
             </div>
-            <input type="text" style="width: 20px;margin-left: 235px;" class="ctr-uEstres" placeholder="UE" title="UE (${(+pj.status.uEstres+6) + ', ' + (+pj.status.uEstres+12) + ', ' + (+pj.status.uEstres+18)})" value="${pj.status.uEstres}"/>
+            <input type="text" style="width: 20px;margin-left: 225px;" class="ctr-uEstres" placeholder="UE" title="UE (${(+pj.status.uEstres+6) + ', ' + (+pj.status.uEstres+12) + ', ' + (+pj.status.uEstres+18)})" value="${pj.status.uEstres}"/>
             <input type="text" style="width: 20px;" class="ctr-uDaño" placeholder="UD" title="UD (${(+pj.status.uDaño+6) + ', ' + (+pj.status.uDaño+12) + ', ' + (+pj.status.uDaño+18)})" value="${pj.status.uDaño}"/>
             <div class="ctr-status" style="display: inline-block;margin-bottom: 2px;">
-                <select style="height: 22.5px; name="Estrés" id="estres" title="Estrés: 3 + BV (+6, +12, +18)">
+                <select style="height: 25x; name="Estrés" id="estres" title="Estrés: 3 + BV (+6, +12, +18)">
                   ${getOption(0, 'estres', 'Sin obstaculos')}
                   ${getOption(1, 'estres', 'En peligro')}
                   ${getOption(2, 'estres', '- 1 lvl hab')}
@@ -40,7 +40,7 @@ $(document).ready(function() {
                   ${getOption(4, 'estres', '- 3 lvl hab')}
                   ${getOption(5, 'estres', '¡Incapacitado!')}
               </select>
-              <select style="height: 22.5px; name="daño" id="daño" title="Daño: BF + Mod Umbral daño (+6, +12, +18)">
+              <select style="height: 25px; name="daño" id="daño" title="Daño: BF + Mod Umbral daño (+6, +12, +18)">
                   ${getOption(0, 'daño', 'Ileso')}
                   ${getOption(1, 'daño', 'H Leves')}
                   ${getOption(2, 'daño', 'H Moderadas')}
@@ -191,7 +191,7 @@ $(document).ready(function() {
           `<button id="ctb-notes" class="${buttonClasses}" style="right: 10px;${buttonStyle+buttonSupport}">Notas</button>`,
           //`<button id="blink" style="right: 100px;${buttonStyle+buttonSupport}" class="">B Link</button>`,
           `<div id="ctp-notes" style="z-index: 11;right: 10px; box-shadow: -1px -1px 5px 0px rgb(0 0 0 / 27%); ${panelStyle}"><span style="color: #000000bd;">Notas</span><textarea style="display:block;" class="tracker-elements" id="cti-notes" rows="4" cols="50" placeholder="Notas">${data.notes}</textarea></div>`,
-          `<div id="ctp-combat" style="max-width: 730px; min-width: 280px; width: -webkit-fill-available;width: -moz-fill-available;left: 10px; ${leftPanelStyle+panelStyle}"><button class="${buttonClasses}" style="${buttonStyle} padding-top: 7px; padding-bottom: 7px; margin-right:20px; background-color: rgb(44,171,33); display: inline-block;" id="ctb-new">+</button><div style="position: absolute; right: 20px; top: 7px;"><button id="combat-restart" style="${buttonStyle} margin-right: 10px;  padding-top: 7px; padding-bottom: 7px; display: inline-block; background-color: rgb(255,54,51);" class="${buttonClasses}">Reset</button><span style="color: #000000bd;">Turn: <input type="number" style="width: 50px;" id="combat-turn" value="${data.combat.turn}" placeholder="Turno"></span><button id="combat-next" style="${buttonStyle} margin-left: 10px; padding-top: 7px; padding-bottom: 7px; display: inline-block;" class="${buttonClasses}">Siguiente</button></div><div style="color: #000000bd; margin-top: 20px; max-height: 300px; overflow: auto;" class="ctr-list"></div></div>`,
+          `<div id="ctp-combat" style="max-width: 756px; min-width: 280px; width: -webkit-fill-available;width: -moz-fill-available;left: 10px; ${leftPanelStyle+panelStyle}"><button class="${buttonClasses}" style="${buttonStyle} padding-top: 7px; padding-bottom: 7px; margin-right:20px; background-color: rgb(44,171,33); display: inline-block;" id="ctb-new">+</button><div style="position: absolute; right: 20px; top: 7px;"><button id="combat-restart" style="${buttonStyle} margin-right: 10px;  padding-top: 7px; padding-bottom: 7px; display: inline-block; background-color: rgb(255,54,51);" class="${buttonClasses}">Reset</button><span style="color: #000000bd;">Turn: <input type="number" style="width: 50px;" id="combat-turn" value="${data.combat.turn}" placeholder="Turno"></span><button id="combat-next" style="${buttonStyle} margin-left: 10px; padding-top: 7px; padding-bottom: 7px; display: inline-block;" class="${buttonClasses}">Siguiente</button></div><div style="color: #000000bd; margin-top: 20px; max-height: 300px; overflow: auto;" class="ctr-list"></div></div>`,
         );
         return data;
     }
