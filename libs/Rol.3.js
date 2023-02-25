@@ -27,7 +27,7 @@ $(document).ready(function() {
               <span style="cursor: pointer; padding-right: 10px;">&#9776;</span>
               ${/*<span class="open-npc" style="cursor: pointer;font-size: 18px;font-weight: bold;">⚀</span>*/''}
               <input type="radio" class="tracker-turn" name="turn" value="${i}">
-              <input type="text" class="ctr-name" placeholder="Nombre" value="${pj.name}"/>
+              <input type="text" style="width:120px" class="ctr-name" title="${pj.name}" placeholder="Nombre" value="${pj.name}"/>
             </div>
             <input type="text" style="width: 30px;" class="ctr-uEstres" placeholder="UE" title="UE (${(+pj.status.uEstres+6) + ', ' + (+pj.status.uEstres+12) + ', ' + (+pj.status.uEstres+18)})" value="${pj.status.uEstres}"/>
             <input type="text" style="width: 30px;" class="ctr-uDaño" placeholder="UD" title="UD (${(+pj.status.uDaño+6) + ', ' + (+pj.status.uDaño+12) + ', ' + (+pj.status.uDaño+18)})" value="${pj.status.uDaño}"/>
@@ -49,7 +49,7 @@ $(document).ready(function() {
                   ${getOption(5, 'daño', '¡Muerto!')}
               </select>
             </div>
-            <input type="text" class="ctr-notes" placeholder="Notas" value="${pj.notes}"/>
+            <input type="text" class="ctr-notes" placeholder="Notas" title="${pj.notes}" value="${pj.notes}"/>
             <button style="${buttonStyle} padding: 8px; background-color: rgb(255,54,51); padding-top: 4px; padding-bottom: 4px; display: inline-block;" class="ctr-delete ${buttonClasses}" index="${i}">D</button>
           <div style="display:none;padding-left: 50px;" class="npc-data">${getNPCPanel(pj)}</div>
         </div>`
@@ -191,7 +191,7 @@ $(document).ready(function() {
           `<button id="ctb-notes" class="${buttonClasses}" style="right: 10px;${buttonStyle+buttonSupport}">Notas</button>`,
           //`<button id="blink" style="right: 100px;${buttonStyle+buttonSupport}" class="">B Link</button>`,
           `<div id="ctp-notes" style="z-index: 11;right: 10px; box-shadow: -1px -1px 5px 0px rgb(0 0 0 / 27%); ${panelStyle}"><span style="color: #000000bd;">Notas</span><textarea style="display:block;" class="tracker-elements" id="cti-notes" rows="4" cols="50" placeholder="Notas">${data.notes}</textarea></div>`,
-          `<div id="ctp-combat" style="max-width: 790px; min-width: 280px; width: -webkit-fill-available;width: -moz-fill-available;left: 10px; ${leftPanelStyle+panelStyle}"><button class="${buttonClasses}" style="${buttonStyle} padding-top: 7px; padding-bottom: 7px; margin-right:20px; background-color: rgb(44,171,33); display: inline-block;" id="ctb-new">+</button><div style="position: absolute; right: 20px; top: 7px;"><button id="combat-restart" style="${buttonStyle} margin-right: 10px;  padding-top: 7px; padding-bottom: 7px; display: inline-block; background-color: rgb(255,54,51);" class="${buttonClasses}">Reset</button><span style="color: #000000bd;">Turn: <input type="number" style="width: 50px;" id="combat-turn" value="${data.combat.turn}" placeholder="Turno"></span><button id="combat-next" style="${buttonStyle} margin-left: 10px; padding-top: 7px; padding-bottom: 7px; display: inline-block;" class="${buttonClasses}">Siguiente</button></div><div style="color: #000000bd; margin-top: 20px; max-height: 300px; overflow: auto;" class="ctr-list"></div></div>`,
+          `<div id="ctp-combat" style="max-width: 725px; min-width: 280px; width: -webkit-fill-available;width: -moz-fill-available;left: 10px; ${leftPanelStyle+panelStyle}"><button class="${buttonClasses}" style="${buttonStyle} padding-top: 7px; padding-bottom: 7px; margin-right:20px; background-color: rgb(44,171,33); display: inline-block;" id="ctb-new">+</button><div style="position: absolute; right: 20px; top: 7px;"><button id="combat-restart" style="${buttonStyle} margin-right: 10px;  padding-top: 7px; padding-bottom: 7px; display: inline-block; background-color: rgb(255,54,51);" class="${buttonClasses}">Reset</button><span style="color: #000000bd;">Turn: <input type="number" style="width: 50px;" id="combat-turn" value="${data.combat.turn}" placeholder="Turno"></span><button id="combat-next" style="${buttonStyle} margin-left: 10px; padding-top: 7px; padding-bottom: 7px; display: inline-block;" class="${buttonClasses}">Siguiente</button></div><div style="color: #000000bd; margin-top: 20px; max-height: 300px; overflow: auto;" class="ctr-list"></div></div>`,
 		      '<style>.ctr-list::-webkit-scrollbar-track{background-color:#F5F5F5;} .ctr-list::-webkit-scrollbar-thumb{border:none;background-color: lightgrey}</style>'
 		);
         return data;
